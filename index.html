@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مغامرة الكون الثلاثية</title>
+  <meta name="theme-color" content="#07111f" />
+  <title>أسرار الوادي المنسي</title>
   <link rel="stylesheet" href="style.css" />
   <script type="importmap">
     { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
   </script>
 </head>
 <body>
-  <div id="hud">
-    <div><strong>النقاط</strong> <span id="score">0</span></div>
-    <div id="status">اجمع الكرات الذهبية!</div>
+  <div id="hud" aria-live="polite">
+    <div>الشظايا: <strong id="score">0 / 8</strong></div>
+    <div>الوقت: <strong id="timer">90</strong></div>
+    <div>القلوب: <strong id="lives">♥ ♥ ♥</strong></div>
+    <div id="status">ابحث عن الشظايا... وانتبه للحارس!</div>
   </div>
 
-  <div id="start-screen">
+  <div id="start-screen" class="overlay">
     <div class="panel">
-      <h1>مغامرة الكون الثلاثية</h1>
-      <p>استخدم <kbd>WASD</kbd> أو الأسهم للحركة<br />استخدم الفأرة لتدوير الكاميرا</p>
-      <button id="start-button">ابدأ اللعب</button>
+      <p class="eyebrow">مغامرة غامضة ثلاثية الأبعاد</p>
+      <h1>أسرار الوادي المنسي</h1>
+      <p>تاهت آثار قديمة في وادٍ غارق في الظلام. اجمع الشظايا الثماني قبل نفاد الوقت، وتجنب الصخور والحارس الذي يقترب منك!</p>
+      <p class="controls"><kbd>WASD</kbd> أو الأسهم للحركة<br />اسحب بالفأرة لتدوير الكاميرا</p>
+      <button id="start-button">ابدأ المغامرة</button>
     </div>
   </div>
 
-  <div id="game-over" class="hidden">
+  <div id="game-over" class="overlay hidden">
     <div class="panel">
-      <h2 id="game-over-title">انتهت اللعبة!</h2>
+      <p class="eyebrow">نهاية الرحلة</p>
+      <h2 id="game-over-title">انتهت المغامرة</h2>
       <p id="final-score"></p>
-      <button id="restart-button">العب مرة أخرى</button>
+      <button id="restart-button">حاول من جديد</button>
     </div>
   </div>
 
